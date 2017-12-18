@@ -16,7 +16,6 @@ class ChannelProvider(metaclass=Singleton):
     def __init__(self):
         self._config = Config()
         self.__channelObserver = ChannelObserver(self._config)
-        # self.__status = self.__channelObserver.stream_status()
         self.__status = None
 
     def check_status(self):

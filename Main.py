@@ -3,7 +3,7 @@ import logging
 from telegram.ext import Updater, CommandHandler
 
 from Config import Config
-from Jobs import check_status
+from Jobs import check_status, check_vk
 
 if __name__ == '__main__':
     config = Config()
@@ -13,6 +13,6 @@ if __name__ == '__main__':
     logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                         level=logging.INFO)
 
-    job_status = job_queue.run_repeating(check_status, interval=60, first=0)
+    job_status = job_queue.run_repeating(check_vk, interval=60, first=0)
 
     updater.start_polling()
