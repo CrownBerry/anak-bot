@@ -33,4 +33,4 @@ class VkService:
         self.__api = vk.API(vk.Session(access_token=self.__token))
 
     def get_last_post(self):
-        return self.__api.wall.get(owner_id=-self.__group, count=1, filter='owner')[1]
+        return self.__api.wall.get(owner_id=-int(self.__group), count=1, filter='owner')[1]
