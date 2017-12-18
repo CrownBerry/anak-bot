@@ -21,9 +21,11 @@ class VkProvider(metaclass=Singleton):
     def check(self):
         old_id = self.__last_id
         new_post = self.__vk.get_last_post()
-        if old_id == new_post['id']:
-            return 'None'
-        return new_post['text']
+        response = 'None'
+        if old_id != new_post['id']:
+            response = new_post['text']
+        self.__last_id = new_post['id']
+        return response
 
 
 class VkService:
