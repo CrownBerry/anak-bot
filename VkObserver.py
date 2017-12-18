@@ -27,6 +27,16 @@ class VkProvider(metaclass=Singleton):
         self.__last_id = new_post['id']
         return response
 
+    def is_photo(self):
+        new_post = self.__vk.get_last_post()
+        if 'attachment' not in new_post:
+            return None
+        att = new_post['attachment']
+        if att['type'] != 'photo':
+            return None
+        else:
+            return att['photo']['src']
+
 
 class VkService:
     def __init__(self, config):

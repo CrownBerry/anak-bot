@@ -12,5 +12,8 @@ def check_status(bot, job):
 def check_vk(bot, job):
     text = VkProvider().check()
     if text != "None":
+        url = VkProvider().is_photo()
         for group in Store().list():
             bot.send_message(chat_id=group, text=text)
+            if url is not None:
+                bot.send_photo(chat_id=group, photo=url)
