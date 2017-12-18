@@ -1,4 +1,5 @@
 from ChannelObserver import ChannelProvider
+from VkObserver import VkProvider
 
 
 def check_status(bot, job):
@@ -8,6 +9,6 @@ def check_status(bot, job):
 
 
 def check_vk(bot, job):
-    text = ChannelProvider().check_status()
+    text = VkProvider().check()
     if text != "None":
         bot.send_message(chat_id="@anakq_stream", text=text)
