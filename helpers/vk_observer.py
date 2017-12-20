@@ -1,6 +1,6 @@
 import vk
 
-from Helpers.Config import Config
+from helpers.config import Config
 
 
 class Singleton(type):

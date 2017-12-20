@@ -1,5 +1,5 @@
-from Database.Repository import MainRepository
-from Helpers.VkObserver import VkProvider
+from database.repository import MainRepository
+from helpers.vk_observer import VkProvider
 
 
 def notify(bot, update):

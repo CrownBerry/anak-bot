@@ -2,8 +2,8 @@ import logging
 
 from telegram.ext import Updater, CommandHandler
 
-from Helpers.Config import Config
-from Helpers.Jobs import check_vk, notify
+from helpers.config import Config
+from helpers.jobs import check_vk, notify
 
 if __name__ == '__main__':
     config = Config()

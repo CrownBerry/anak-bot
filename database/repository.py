@@ -1,8 +1,8 @@
 from sqlalchemy import create_engine
 
-from Database.Models import ses_scope, Group, Base
-from Helpers.Config import Config
-from Helpers.VkObserver import Singleton
+from database.models import ses_scope, Group, Base
+from helpers.config import Config
+from helpers.vk_observer import Singleton
 
 
 class MainRepository(metaclass=Singleton):
