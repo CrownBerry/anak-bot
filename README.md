@@ -23,11 +23,9 @@ vkToken: service token VK API
 group: VK group ID for subscribing
 ```
 
-Also you need to install some packages via pip (or any other comfortable for you method)
+Also you need to install dependencies:
 ```
-pip3 install vk
-pip3 install python-telegram-bot
-pip3 install python-twitch-client
+pip3 install -r requirements.txt
 ```
 
 ### Using
