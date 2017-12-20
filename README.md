@@ -4,7 +4,7 @@ VK-to-Telegram notifier bot.
 
 ## Getting Started
 
-You can use this bot with any VK group want, but now group ID hardcoded in `config.ini` file
+You can use this bot with any VK group you want, but now group ID hardcoded in `config.ini` file
 
 ### Configuring
 
@@ -35,4 +35,9 @@ pip3 install python-twitch-client
 Just run
 ```
 python3 Main.py
+```
+
+For reposting from VK group to telegram chat just add this bot to group member, and call
+```
+/notify_me
 ```
