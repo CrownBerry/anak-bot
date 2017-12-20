@@ -4,13 +4,15 @@ from telegram.ext import Updater, CommandHandler
 
 from Config import Config
 from Jobs import check_status, check_vk
+from Repository import MainRepository
 from Store import Store
 
 
 def notify(bot, update):
-    Store().add(update.message.chat_id)
+    # Store().add(update.message.chat_id)
+    result = MainRepository().add_group(update.message.chat_id)
     bot.send_message(chat_id=update.message.chat_id,
-                     text="Added this group to notify list")
+                     text=result)
 
 if __name__ == '__main__':
     config = Config()
