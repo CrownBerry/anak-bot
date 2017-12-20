@@ -2,17 +2,8 @@ import logging
 
 from telegram.ext import Updater, CommandHandler
 
-from Config import Config
-from Jobs import check_status, check_vk
-from Repository import MainRepository
-from Store import Store
-
-
-def notify(bot, update):
-    # Store().add(update.message.chat_id)
-    result = MainRepository().add_group(update.message.chat_id)
-    bot.send_message(chat_id=update.message.chat_id,
-                     text=result)
+from Helpers.Config import Config
+from Helpers.Jobs import check_vk, notify
 
 if __name__ == '__main__':
     config = Config()

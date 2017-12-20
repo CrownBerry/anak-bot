@@ -1,8 +1,8 @@
 from sqlalchemy import create_engine
 
-from Config import Config
-from Models import ses_scope, Group, Base
-from VkObserver import Singleton
+from Database.Models import ses_scope, Group, Base
+from Helpers.Config import Config
+from Helpers.VkObserver import Singleton
 
 
 class MainRepository(metaclass=Singleton):
@@ -20,3 +20,8 @@ class MainRepository(metaclass=Singleton):
                 group = Group(group_id=input_group_id)
                 ses.add(group)
                 return "Subscribe this group to notify list"
+
+    def get_group(self):
+        with ses_scope(self.__engine) as ses:
+            result = ses.query(Group).all()
+            return [group.group_id for group in result]
