@@ -15,12 +15,10 @@ Config.ini example
 ```
 [DEFAULT]
 tgToken: your telegram token
-twitchClientId: your twitch client ID, if u want switch bot to Twitch instead of VK
-oauthToken: oauth token for Twitch
-channelId: id of stream channel
 telegramnChannel: Name of TG channel for notify
 vkToken: service token VK API
 group: VK group ID for subscribing
+connectionString: sqlite:///file.db # path to sqlite3 database file
 ```
 
 Also you need to install dependencies:
@@ -30,12 +28,16 @@ pip3 install -r requirements.txt
 
 ### Using
 
-Just run
+*Create bot with telegram @BotFather, copy telegram token of your bot to `config.ini`
+
+*Fill other configs.
+
+*Just run
 ```
 python3 Main.py
 ```
 
-For reposting from VK group to telegram chat just add this bot to group member, and call
+*For subscribe TG group to VK group (whic ID you enter in `config.ini`) call
 ```
 /notify_me
 ```
