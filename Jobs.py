@@ -11,6 +11,7 @@ def check_status(bot, job):
 
 def check_vk(bot, job):
     text = VkProvider().check()
+    text = text.replace("<br>", "\n")
     if text != "None":
         url = VkProvider().is_photo()
         for group in Store().list():
