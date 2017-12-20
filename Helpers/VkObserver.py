@@ -35,7 +35,7 @@ class VkProvider(metaclass=Singleton):
         if att['type'] != 'photo':
             return None
         else:
-            return att['photo']['src']
+            return att['photo']['src_big']
 
 
 class VkService:
