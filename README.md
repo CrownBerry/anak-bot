@@ -28,16 +28,16 @@ pip3 install -r requirements.txt
 
 ### Using
 
-*Create bot with telegram @BotFather, copy telegram token of your bot to `config.ini`
+* Create bot with telegram @BotFather, copy telegram token of your bot to `config.ini`
 
-*Fill other configs.
+* Fill other configs.
 
-*Just run
+* Just run
 ```
 python3 Main.py
 ```
 
-*For subscribe TG group to VK group (whic ID you enter in `config.ini`) call
+* For subscribe TG group to VK group (whic ID you enter in `config.ini`) call
 ```
 /notify_me
 ```
