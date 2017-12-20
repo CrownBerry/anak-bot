@@ -1,0 +1,3 @@
+vk
+python-telegram-bot
+python-twitch-client
