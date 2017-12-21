@@ -34,7 +34,7 @@ pip3 install -r requirements.txt
 
 * Just run
 ```
-python3 Main.py
+python3 main.py
 ```
 
 * For subscribe TG group to VK group (whic ID you enter in `config.ini`) call
