@@ -15,7 +15,6 @@ Config.ini example
 ```
 [DEFAULT]
 tgToken: your telegram token
-telegramnChannel: Name of TG channel for notify
 vkToken: service token VK API
 group: VK group ID for subscribing
 connectionString: sqlite:///file.db # path to sqlite3 database file
