@@ -15,6 +15,7 @@ def check_vk(bot, job):
         url = VkProvider().is_photo()
         group_list = MainRepository().get_group()
         for group in group_list:
-            bot.send_message(chat_id=group, text=text)
+            message = bot.send_message(chat_id=group, text=text)
+            bot.pin_chat_message(chat_id=group, message_id=message.message_id)
             if url is not None:
                 bot.send_photo(chat_id=group, photo=url)
