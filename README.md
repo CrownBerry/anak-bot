@@ -40,3 +40,43 @@ python3 main.py
 ```
 /notify_me
 ```
+
+### Using with Docker
+
+* Dockefile exmaple
+```
+FROM python:3.4-alpine
+
+COPY ./anak-bot /anak-bot/
+COPY ./file.db /anak-bot/file.db
+
+WORKDIR /anak-bot
+
+RUN pip3 install -r requirements.txt
+
+CMD ["python3", "/anak-bot/Main.py"]
+```
+
+### Using with docker-compose
+
+* docker-compose.yml example
+```
+version: '3'
+services:
+  anak-bot:
+    build:
+      context: .
+      dockerfile: ./bot/Dockerfile
+    restart: always
+    volumes:
+      - ./file.db:/anak-bot/file.db
+```
+* If you use docker-compose, remove line with COPY database file in Dockerfile
+```
+COPY ./file.db /anak-bot/file.db
+```
+* We use docker-compose volumes instead
+```
+volumes:
+  - ./file.db:/anak-bot/file.db
+```
