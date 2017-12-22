@@ -6,6 +6,13 @@ VK-to-Telegram notifier bot.
 
 You can use this bot with any VK group you want, but now group ID hardcoded in `config.ini` file
 
+### Installing
+
+Just clone it
+```
+git clone https://github.com/CrownBerry/anak-bot.git
+```
+
 ### Configuring
 
 You can use your own config with this project.
