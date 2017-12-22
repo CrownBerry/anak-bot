@@ -50,7 +50,7 @@ python3 main.py
 
 ### Using with Docker
 
-* Dockefile exmaple
+###### Dockefile exmaple
 ```
 FROM python:3.4-alpine
 
@@ -65,8 +65,7 @@ CMD ["python3", "/anak-bot/Main.py"]
 ```
 
 ### Using with docker-compose
-
-* docker-compose.yml example
+###### docker-compose.yml example
 ```
 version: '3'
 services:
@@ -78,11 +77,11 @@ services:
     volumes:
       - ./file.db:/anak-bot/file.db
 ```
-* If you use docker-compose, remove line with COPY database file in Dockerfile
+If you use docker-compose, remove line with COPY database file in Dockerfile
 ```
 COPY ./file.db /anak-bot/file.db
 ```
-* We use docker-compose volumes instead
+ We use docker-compose volumes instead
 ```
 volumes:
   - ./file.db:/anak-bot/file.db
