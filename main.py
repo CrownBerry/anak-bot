@@ -6,7 +6,7 @@ from helpers.config import Config
 from helpers.jobs import check_vk, notify
 
 if __name__ == '__main__':
-    logging.basicConfig(level=logging.DEBUG,
+    logging.basicConfig(level=logging.ERROR,
                         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
     config = Config()
     updater = Updater(token=config.get_token())
