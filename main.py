@@ -18,7 +18,6 @@ if __name__ == '__main__':
                           port=PORT,
                           url_path=config.get_token())
     updater.bot.set_webhook("https://anak-bot.herokuapp.com/" + config.get_token())
-    updater.idle()
 
     job_queue = updater.job_queue
     dispatcher = updater.dispatcher
@@ -28,4 +27,6 @@ if __name__ == '__main__':
     job_status = job_queue.run_repeating(check_vk, interval=60, first=0)
     dispatcher.add_handler(notify_handler)
 
-    updater.start_polling()
+    # updater.start_polling()
+
+    updater.idle()
