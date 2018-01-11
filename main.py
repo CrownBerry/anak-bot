@@ -13,10 +13,6 @@ if __name__ == '__main__':
 
     PORT = int(os.environ.get('PORT', '8443'))
     updater = Updater(token=config.get_token())
-
-    updater.start_webhook(listen="0.0.0.0",
-                          port=PORT,
-                          url_path=config.get_token())
     updater.bot.set_webhook("https://anak-bot.herokuapp.com/" + config.get_token())
 
     job_queue = updater.job_queue
@@ -29,4 +25,8 @@ if __name__ == '__main__':
 
     # updater.start_polling()
 
+    updater.start_webhook(listen="0.0.0.0",
+                          port=PORT,
+                          url_path=config.get_token())
+    updater.bot.set_webhook("https://anak-bot.herokuapp.com/" + config.get_token())
     updater.idle()
