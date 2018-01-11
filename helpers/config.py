@@ -13,10 +13,10 @@ class Config:
             self.__group = default_config.get('group')
             self.__connection_string = default_config.get('connectionString')
         else:
-            self.__telegram_token = os.environ('TG_TOKEN')
-            self.__vk_token = os.environ('VK_TOKEN')
-            self.__group = os.environ('GROUP')
-            self.__connection_string = os.environ('CONNECTION_STRING')
+            self.__telegram_token = os.environ['TG_TOKEN']
+            self.__vk_token = os.environ['VK_TOKEN']
+            self.__group = os.environ['GROUP']
+            self.__connection_string = os.environ['CONNECTION_STRING']
 
     def get_token(self):
         return self.__telegram_token
