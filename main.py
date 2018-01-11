@@ -1,5 +1,6 @@
 import logging
 
+import os
 from telegram.ext import Updater, CommandHandler
 
 from helpers.config import Config
@@ -9,7 +10,16 @@ if __name__ == '__main__':
     logging.basicConfig(level=logging.ERROR,
                         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
     config = Config()
+
+    PORT = int(os.environ.get('PORT', '8443'))
     updater = Updater(token=config.get_token())
+
+    updater.start_webhook(listen="0.0.0.0",
+                          port=PORT,
+                          url_path=config.get_token())
+    updater.bot.set_webhook("https://anak-bot.herokuapp.com/" + config.get_token())
+    updater.idle()
+
     job_queue = updater.job_queue
     dispatcher = updater.dispatcher
 
